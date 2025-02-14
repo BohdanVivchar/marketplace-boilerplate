@@ -2,7 +2,7 @@ import { Table } from '~/components/ui';
 
 import type { Order } from '@0xsequence/marketplace-sdk';
 
-function SequenceTableListingOrderRow({ order }: { order: Order }) {
+function OrdersTableListingOrderRow({ order }: { order: Order }) {
   return (
     <Table.Row>
       <Table.Cell>{order.priceAmount}</Table.Cell>
@@ -13,4 +13,4 @@ function SequenceTableListingOrderRow({ order }: { order: Order }) {
   );
 }
 
-export default SequenceTableListingOrderRow;
+export default OrdersTableListingOrderRow;

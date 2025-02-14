@@ -7,11 +7,10 @@ import {
   useSellModal,
 } from '@0xsequence/marketplace-sdk/react';
 import { toast } from 'react-toastify';
-import { useToast } from 'react-toastify';
 import type { Hex } from 'viem';
 import { useAccount } from 'wagmi';
 
-const SequenceTableAction = ({
+const OrdersTableAction = ({
   collectionAddress,
   chainId,
   tokenId,
@@ -125,4 +124,4 @@ const SequenceTableAction = ({
   );
 };
 
-export default SequenceTableAction;
+export default OrdersTableAction;

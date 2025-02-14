@@ -2,7 +2,7 @@ import { Flex, Table } from '~/components/ui';
 
 import { Skeleton } from '@0xsequence/design-system';
 
-const SequenceTableBodySkeleton = ({
+const OrdersTableBodySkeleton = ({
   columns,
   pageSize,
 }: {
@@ -13,18 +13,18 @@ const SequenceTableBodySkeleton = ({
     <>
       <Table.Body className="text-foreground">
         {Array.from({ length: pageSize }).map((_, index) => (
-          <SequenceTableRowSkeletonSmallScreen key={index} />
+          <OrdersTableRowSkeletonSmallScreen key={index} />
         ))}
 
         {Array.from({ length: pageSize }).map((_, index) => (
-          <SequenceTableRowSkeletonWideScreen key={index} columns={columns} />
+          <OrdersTableRowSkeletonWideScreen key={index} columns={columns} />
         ))}
       </Table.Body>
     </>
   );
 };
 
-const SequenceTableRowSkeletonWideScreen = ({
+const OrdersTableRowSkeletonWideScreen = ({
   columns,
 }: {
   columns: number;
@@ -40,7 +40,7 @@ const SequenceTableRowSkeletonWideScreen = ({
   );
 };
 
-const SequenceTableRowSkeletonSmallScreen = () => {
+const OrdersTableRowSkeletonSmallScreen = () => {
   return (
     <Table.Row className="table-row md:hidden">
       <Table.Cell>
@@ -64,4 +64,4 @@ const SequenceTableRowSkeletonSmallScreen = () => {
   );
 };
 
-export default SequenceTableBodySkeleton;
+export default OrdersTableBodySkeleton;

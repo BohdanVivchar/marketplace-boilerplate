@@ -1,8 +1,8 @@
 import { Table } from '../ui';
-import SequenceTableBody from './_components/Body';
-import SequenceTableFooter from './_components/Footer';
-import SequenceTableHeader from './_components/Header';
-import SequenceTableBodySkeleton from './_components/Skeletons';
+import OrdersTableBody from './_components/Body';
+import OrdersTableFooter from './_components/Footer';
+import OrdersTableHeader from './_components/Header';
+import OrdersTableBodySkeleton from './_components/Skeletons';
 import { Box } from '@0xsequence/design-system';
 import type { Order, Page } from '@0xsequence/marketplace-sdk';
 import type { Observable } from '@legendapp/state';
@@ -15,7 +15,7 @@ export const PAGE_SIZE_OPTIONS = {
   20: { label: '20', value: 20 },
 };
 
-type SequenceTableProps = {
+type OrdersTableProps = {
   chainId: string;
   collectionAddress: Hex;
   tokenId: string;
@@ -26,7 +26,7 @@ type SequenceTableProps = {
   isLoading: boolean;
 };
 
-const SequenceTable = observer((props: SequenceTableProps) => {
+const OrdersTable = observer((props: OrdersTableProps) => {
   const {
     chainId,
     collectionAddress,
@@ -41,23 +41,23 @@ const SequenceTable = observer((props: SequenceTableProps) => {
   return (
     <Box className="overflow-hidden rounded-md border border-foreground/20">
       <Table.Root>
-        <SequenceTableHeader items={columns} isLoading={props.isLoading} />
+        <OrdersTableHeader items={columns} isLoading={props.isLoading} />
 
         {props.isLoading && (
-          <SequenceTableBodySkeleton
+          <OrdersTableBodySkeleton
             columns={columns.length}
             pageSize={page$.pageSize.get()}
           />
         )}
 
         {!props.isLoading && (
-          <SequenceTableBody
+              <OrdersTableBody
             orders={orders}
             collectionAddress={collectionAddress}
           />
         )}
 
-        <SequenceTableFooter
+        <OrdersTableFooter
           page$={page$}
           ordersCount={ordersCount}
           ordersCountLoading={ordersCountLoading}
@@ -67,4 +67,4 @@ const SequenceTable = observer((props: SequenceTableProps) => {
   );
 });
 
-export default SequenceTable;
+export default OrdersTable;

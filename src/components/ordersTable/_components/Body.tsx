@@ -1,10 +1,10 @@
 import { Table } from '~/components/ui';
 
-import SequenceTableRow from './TableRow';
 import type { Order } from '@0xsequence/marketplace-sdk';
 import type { Hex } from 'viem';
+import OrdersTableRow from './TableRow';
 
-const SequenceTableBody = ({
+const OrdersTableBody = ({
   orders,
 }: {
   orders: Order[] | undefined;
@@ -13,7 +13,7 @@ const SequenceTableBody = ({
   return (
     <Table.Body className="text-foreground">
       {orders?.map((order: Order, index: number) => (
-        <SequenceTableRow
+        <OrdersTableRow
           key={`order-${order.orderId}`}
           order={order}
           index={index}
@@ -23,4 +23,4 @@ const SequenceTableBody = ({
   );
 };
 
-export default SequenceTableBody;
+export default OrdersTableBody;

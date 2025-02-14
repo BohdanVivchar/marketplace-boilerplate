@@ -5,7 +5,7 @@ import {
   SelectTrigger,
 } from '~/components/ui/Select/select';
 
-import { PAGE_SIZE_OPTIONS } from '../SequenceTable';
+import { PAGE_SIZE_OPTIONS } from '../OrdersTable';
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -17,7 +17,7 @@ import type { Page } from '@0xsequence/marketplace-sdk';
 import type { Observable } from '@legendapp/state';
 import { observer } from '@legendapp/state/react';
 
-const SequenceTableFooter = observer(
+const OrdersTableFooter = observer(
   ({
     page$,
     ordersCount,
@@ -194,4 +194,4 @@ function PreviousNextPageControls({
   );
 }
 
-export default SequenceTableFooter;
+export default OrdersTableFooter;

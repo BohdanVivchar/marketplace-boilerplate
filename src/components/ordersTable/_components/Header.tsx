@@ -3,7 +3,7 @@ import { Table } from '~/components/ui';
 import { Text } from '@0xsequence/design-system';
 import { useAccount } from 'wagmi';
 
-const SequenceTableHeader = ({
+const OrdersTableHeader = ({
   items,
   isLoading,
 }: {
@@ -31,4 +31,4 @@ const SequenceTableHeader = ({
   );
 };
 
-export default SequenceTableHeader;
+export default OrdersTableHeader;

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import SequenceTable, {
+import OrdersTable, {
   PAGE_SIZE_OPTIONS,
-} from '~/components/sequenceTable/SequenceTable';
+} from '~/components/ordersTable/OrdersTable';
 import { Routes } from '~/lib/routes';
 
 import { Box, Text } from '@0xsequence/design-system';
@@ -58,7 +58,7 @@ const ListingsTable = observer(() => {
   }
 
   return (
-    <SequenceTable
+    <OrdersTable
       orders={listings?.listings}
       ordersCount={countOfListings?.count}
       ordersCountLoading={countOfListingsLoading}

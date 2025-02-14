@@ -1,6 +1,5 @@
 import { cn, Table } from '~/components/ui';
 
-import SequenceTableAction from './Action';
 import AddressPill from './AddressPill';
 import MarketplacePill from './MarketplacePill';
 import { Box, Text } from '@0xsequence/design-system';
@@ -9,8 +8,9 @@ import { formatDistance } from 'date-fns';
 import { formatUnits, type Hex } from 'viem';
 import { useAccount } from 'wagmi';
 import { useCurrencies } from '@0xsequence/marketplace-sdk/react';
+import OrdersTableAction from './Action';
 
-const SequenceTableRow = ({
+const OrdersTableRow = ({
   order,
   index,
 }: {
@@ -98,7 +98,7 @@ const SequenceTableRow = ({
 
             {accountAddress && (
               <Table.Cell className="p-0">
-                <SequenceTableAction
+                <OrdersTableAction
                   chainId={String(chainId)}
                   collectionAddress={collectionContractAddress as Hex}
                   tokenId={tokenId}
@@ -146,7 +146,7 @@ const SequenceTableRow = ({
 
         {accountAddress && (
           <Table.Cell className="p-0 pr-2">
-            <SequenceTableAction
+            <OrdersTableAction
               chainId={String(chainId)}
               collectionAddress={collectionContractAddress as Hex}
               tokenId={tokenId}
@@ -159,4 +159,4 @@ const SequenceTableRow = ({
   );
 };
 
-export default SequenceTableRow;
+export default OrdersTableRow;
