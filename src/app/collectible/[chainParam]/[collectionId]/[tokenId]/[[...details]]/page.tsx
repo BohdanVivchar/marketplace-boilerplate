@@ -8,6 +8,8 @@ import { CollectibleDescription } from '../_components/Description';
 import { useCollectableData } from '../_hooks/useCollectableData';
 import { CollectibleImage } from './_components/Image';
 import { CollectibleProperties } from './_components/Properties';
+import ListingsTable from './_components/ListingsTable';
+import OffersTable from './_components/OffersTable';
 
 export default function Page() {
   const { collectibleMetadata, collectionId, chainId } = useCollectableData();
@@ -24,6 +26,8 @@ export default function Page() {
         type="multiple"
         defaultValue={[
           'description',
+          'listings',
+          'offers',
           'properties',
           'details',
           'market-data',
@@ -42,6 +46,14 @@ export default function Page() {
             properties={collectibleMetadata.data?.properties}
             attributes={collectibleMetadata.data?.attributes}
           />
+        </CollectibleAccordionItem>
+
+        <CollectibleAccordionItem id="listings" label="Listings">
+          <ListingsTable/>
+        </CollectibleAccordionItem>
+
+        <CollectibleAccordionItem id="offers" label="Offers">
+          <OffersTable />
         </CollectibleAccordionItem>
 
         <CollectibleAccordionItem id="details" label="Details">
