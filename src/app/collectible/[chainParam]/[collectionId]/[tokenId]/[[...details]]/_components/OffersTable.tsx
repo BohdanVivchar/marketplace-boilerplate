@@ -2,7 +2,7 @@ import React from 'react';
 
 import OrdersTable, {
   PAGE_SIZE_OPTIONS,
-} from '~/components/ordersTable/OrdersTable';
+} from '~/app/collectible/[chainParam]/[collectionId]/[tokenId]/_components/ordersTable/OrdersTable';
 import { Routes } from '~/lib/routes';
 
 import { Box, Text } from '@0xsequence/design-system';

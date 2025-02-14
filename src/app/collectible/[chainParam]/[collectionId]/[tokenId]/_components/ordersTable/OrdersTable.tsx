@@ -1,4 +1,4 @@
-import { Table } from '../ui';
+import { Table } from '../../../../../../../components/ui';
 import OrdersTableBody from './_components/Body';
 import OrdersTableFooter from './_components/Footer';
 import OrdersTableHeader from './_components/Header';
